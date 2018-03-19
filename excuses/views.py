@@ -17,5 +17,5 @@ def excuse(request, excuse_id):
     try:
         excuse_detail = RootCause.objects.get(pk=excuse_id)
     except:
-        raise Http404("This content is not available in your country xD")
+        raise Http404("This content is not available in your country.")
     return render(request, 'detail.html', {'excuse_detail': excuse_detail})
