@@ -1,0 +1,9 @@
+{% if latest_excuses_list %}
+    <ul>
+    {% for excuse in latest_excuses_list %}
+        <li><a href="/excuses/{{ excuse.id }}/">{{ excuse.cause_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No excuses are available.</p>
+{% endif %}
