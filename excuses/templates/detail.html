@@ -1,4 +1,10 @@
-<p>Ha ha:</p>
-{{ excuse_detail }}
+<h3>Root Cause for bug:</h3>
 
-<p>Action list to fix that is:</p>
+<h2>{{ rootcause.cause_text }}</h2>
+
+<h3>Action list to fix that is:</h3>
+<ul>
+    {% for actionitem in rootcause.actionplan.all %}
+        <li>{{ actionitem.action_text }}</li>
+    {% endfor %}
+    </ul>

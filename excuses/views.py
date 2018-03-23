@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from excuses.models import RootCause
 from django.template import loader
@@ -14,8 +14,5 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def excuse(request, excuse_id):
-    try:
-        excuse_detail = RootCause.objects.get(pk=excuse_id)
-    except:
-        raise Http404("This content is not available in your country.")
-    return render(request, 'detail.html', {'excuse_detail': excuse_detail})
+    rootcause = get_object_or_404(RootCause, pk=excuse_id)
+    return render(request, 'detail.html', {'rootcause': rootcause})
