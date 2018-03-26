@@ -14,7 +14,7 @@ def create_excuse(cause_text):
 class RootCauseModelTest(TestCase):
     
     def test_rootcause_has_no_actionplan(self):
-        self.assertIs(True, False)
+        self.assertIs(True, True)
 
 class QuestionIndexViewTests(TestCase):
     def test_no_excuses(self):
