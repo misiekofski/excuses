@@ -1,0 +1,14 @@
+<h3>Bug: </h3>
+    
+<h2>{{bug.bug_description}}</h2>
+
+<h3>Root Cause for this bug:</h3>
+
+<h2>{{ rootcause.cause_text }}</h2>
+
+<h3>Action list to fix that is:</h3>
+<ul>
+    {% for actionitem in rootcause.actionplan.all %}
+        <li>{{ actionitem.action_text }}</li>
+    {% endfor %}
+    </ul>
